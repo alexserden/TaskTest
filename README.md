@@ -1,5 +1,5 @@
 # TaskTest
-Приложение с использованием технолоний Spring/Security/MVC/JPA(Hibernate)/Maven/Tomcat/Css/JavaScript.
+Приложение с использованием технолоний Spring/Security/MVC/JPA(Hibernate)/Maven/Tomcat/Css/JavaScript.          
 Пароль и логин для входа c правами администратора:
 login:admin    
 password:12345678    
