@@ -44,15 +44,15 @@ public class UserController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
-
+         // check the validity of our data
         userValidator.validate(userForm, bindingResult);
-
+        //if errors occur, return to the registration page
         if (bindingResult.hasErrors()) {
             return "registration";
         }
 
         userService.save(userForm);
-
+        //if errors occur, return to the registration page
         securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
 
         return "redirect:/welcome";
@@ -88,7 +88,8 @@ public class UserController {
 
     @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
     public String addPerson(@ModelAttribute("person") Person person) {
-
+        // if id is zero then create a new record
+        // if not then we update the record
         if (person.getId() == 0) {
             this.personService.addPerson(person);
         } else {

@@ -24,10 +24,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//Create an instance of the user we are searching for by the user name in our database
         User user = userDao.findByUsername(username);
-
+// create extensions
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
+// Get all user roles that he has and push them into permissions
         for (Role role : user.getRoles()) {
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }
