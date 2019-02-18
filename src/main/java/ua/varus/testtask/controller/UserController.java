@@ -88,30 +88,24 @@ public class UserController {
 
     @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
     public String addPerson(@ModelAttribute("person") Person person) {
-//        если id равен 0, что не может быть, если книга существует, то просим BookService добавить книгу в MySQL,
-//        в противном случае - делаем update
+
         if (person.getId() == 0) {
             this.personService.addPerson(person);
         } else {
             this.personService.updatePerson(person);
         }
-//        возвращаем редирект на главную страницу.
         return "redirect:/admin";
     }
 
-
-    //    Страница для удаления книг
     @RequestMapping("/remove/{id}")
     public String removePerson(@PathVariable("id") int id) {
         this.personService.removePerson(id);
         return "redirect:/admin";
     }
 
-    //    Страница для редактирования книг
     @RequestMapping("/edit/{id}")
     public String editPerson(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personService.getBookById(id));
-//        просим заново прочитать данные по всем книгам в нашей таблице
         model.addAttribute("listPerson", personService.getAllPerson());
 
         return "admin";
