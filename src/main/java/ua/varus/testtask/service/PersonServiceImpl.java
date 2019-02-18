@@ -45,13 +45,6 @@ public class PersonServiceImpl implements PersonService {
         query.setParameter("id", id);
         return query.getSingleResult();
     }
-//    @Override
-//    @Transactional
-//    public Book getBookById(int id) {
-//        TypedQuery<Book> query = entityManager.createNamedQuery("Book.findById", Book.class);
-//        query.setParameter("id", id);
-//        return query.getSingleResult();
-//    }
 
     @Override
     @Transactional

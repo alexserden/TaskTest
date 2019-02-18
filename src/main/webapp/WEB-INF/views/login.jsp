@@ -17,7 +17,7 @@
     <title>Log in with your account</title>
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -28,7 +28,7 @@
 <div class="container">
 
     <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h1>Log in</h1>
+        <h1>Sign in</h1>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
@@ -38,8 +38,8 @@
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-            <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <h4 class="text-center"><a href="${contextPath}/registration">Create a new account</a></h4>
             <h4 class="text-center">OR</h4>
 
             <script>
@@ -135,28 +135,10 @@
     </form>
 
 </div>
-
-
-
-
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 
 </body>
-<body>
-<div th:if="${param.logout}">You have been logged out</div>
-<div th:if="${param.error}">There was an error, please try again</div>
 
-<form th:th:action="@{/login}" method="POST" >
-    <input type="text" name="username" />
-    <input type="password" name="password" />
-    <input type="submit" value="Login" />
-</form>
-
-<form action="/signin/facebook" method="POST">
-    <input type="hidden" name="scope" value="public_profile" />
-    <input type="submit" value="Login using Facebook"/>
-</form>
-</body>
 </html>

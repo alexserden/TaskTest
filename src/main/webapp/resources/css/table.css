@@ -7,10 +7,11 @@ table {
     margin-left: 115px;
     margin-top: 20px;
 }
+
 body{
     background-color: #5cb85c;
 }
-h2{
+h2,h3,h5{
     margin-left: 115px;
 }
 th {

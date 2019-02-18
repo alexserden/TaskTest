@@ -34,7 +34,9 @@
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 <link href="${contextPath}/resources/css/table.css" rel="stylesheet">
 
+
 <table>
+    <h2>Customer Blacklist</h2>
     <tr>
         <th>Id</th>
         <th>FirstName</th>
@@ -51,6 +53,10 @@
             <td>${d.description}</td>
         </tr>
     </c:forEach>
+
 </table>
+<a href="admin"><h3>Edit Data</h3></a>
+<h5>available only for admin</h5>
+
 </body>
 </html>

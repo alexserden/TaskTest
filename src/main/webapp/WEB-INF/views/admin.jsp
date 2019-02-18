@@ -35,11 +35,9 @@
 
 </body>
 <body>
-<br>
-<br>
 <link href="${contextPath}/resources/css/table.css" rel="stylesheet">
-
 <table>
+    <h2>Customer Blacklist</h2>
     <tr>
         <th>Id</th>
         <th>FirstName</th>
@@ -62,7 +60,7 @@
     </c:forEach>
 </table></div>
 
-<h2>Add a Person</h2>
+<h3>Add a Person</h3>
 
 <c:url var="addAction" value="/admin/add"/>
 
