@@ -1,3 +1,6 @@
+
+CREATE SCHEMA varus;
+
 -- Table: users
 CREATE TABLE users (
   id       INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -26,7 +29,7 @@ CREATE TABLE user_roles (
   ENGINE = InnoDB;
 
 -- Table : person
-CREATE TABLE  person(
+CREATE TABLE  persons(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR (255) NOT NULL,
   last_name VARCHAR (255) NOT NULL ,
@@ -36,12 +39,4 @@ CREATE TABLE  person(
 ENGINE = InnoDB;
 -- Insert data
 
-INSERT INTO users VALUES (1, 'alexserden', '$2a$11$h5LAGbRnp1mGKEqrfj.zhusMGgOv1wevGqWYZlAwpMOpCXnZEM6wq');
 
-INSERT INTO roles VALUES (1, 'ROLE_USER');
-INSERT INTO roles VALUES (2, 'ROLE_ADMIN');
-
-INSERT INTO user_roles VALUES (1, 2);
-
-INSERT INTO persons (id, first_name, last_name, address, description)
-VALUES (6,'Alexander','Denysenko','Topol-1','украл булочку')
